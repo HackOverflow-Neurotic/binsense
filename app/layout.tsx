@@ -24,7 +24,7 @@ export default function RootLayout({
         className={`${inter.className} dark bg-gradient-to-br from-purple-600 to-pink-600 bg-blur min-h-screen w-full`}
       >
         <Toaster position="bottom-right" />
-        <BackgroundGradientAnimation></BackgroundGradientAnimation>
+        <BackgroundGradientAnimation />
         <Navbar />
         <PageContainer>{children}</PageContainer>
       </body>
