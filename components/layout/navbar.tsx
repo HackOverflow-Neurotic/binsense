@@ -7,22 +7,24 @@ export default function Navbar() {
     const setRole = useIPStore((state) => state.setRole);
     const router = useRouter();
     return (
-        <div className="w-full top-0 z-50 fixed">
-            <div className="flex bg-white bg-opacity-20 backdrop-blur-lg justify-between items-center px-10 py-6 border-white border-1.5 ">
-            <div className="text-3xl font-bold">
-                    <span className="text-purple-500">Bin</span>Sense
-                </div> 
-                {
-                    role && (
-                        <Button onClick={() => {
-                            setRole('');
-                            router.push('/');
-                        }}>
-                            Disconnect
-                        </Button>
-                    )
-                }
-            </div>
+      <div className="w-full top-0 z-50 fixed">
+        <div className="flex bg-white bg-opacity-50 backdrop-blur-lg justify-between items-center px-10 py-6 border-white/50 border-b-2 ">
+          <div className="text-4xl font-black">
+            <span className="text-4xl font-black text-black">Bin</span>
+            Sense
+          </div>
+          {role && (
+            <Button
+              variant={"v2"}
+              onClick={() => {
+                setRole("");
+                router.push("/");
+              }}
+            >
+              Disconnect
+            </Button>
+          )}
         </div>
+      </div>
     );
 }
