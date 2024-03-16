@@ -26,6 +26,7 @@ export default function Device(){
                     throw new Error("Network response was not ok");
                   }
             }
+            fetchData();
         }, 1000/(parseInt(process.env.FPS ?? "3")+0.5));
         return () => clearInterval(intervalId);
     
