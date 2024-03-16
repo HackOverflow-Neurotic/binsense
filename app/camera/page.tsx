@@ -35,11 +35,9 @@ export default function Camera(){
     const data = await response.json();
 
     if (data.prediction) {
-      // Extract the 'type' property from the response and store it in the array
       const responseType = data.prediction;
       setResArray((prevArray) => {
         const newArray = [...prevArray, responseType];
-        // If the array length exceeds 10, remove the oldest element
         if (newArray.length > 10) {
           newArray.shift();
         }
@@ -74,7 +72,7 @@ export default function Camera(){
   if (role !== "camera") {
     return (
       <>
-        <div>Looser</div>
+        <div className='text-5xl font-semibold justify-center w-full items-center'>Page Not found</div>
       </>
     );
   }

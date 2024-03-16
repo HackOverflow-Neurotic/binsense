@@ -41,12 +41,11 @@ export default function Home() {
         const response = await fetch(`http://${ipNumber}:${portNumber}/ping`, {
           method: "GET",
         });
-        console.log(response);
         if (response) {
           setIpNumber(ipNumber);
           setPortNumber(portNumber);
           setRole(role);
-          router.push("/camera");
+          router.push(`/${role}`);
           toast.success(`Connected as ${role}`);
           toast.dismiss("connecting");
         }
