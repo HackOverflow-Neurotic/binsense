@@ -26,7 +26,7 @@ export default function Camera(){
     const formData = new FormData();
     formData.append("file", imageBlob, "image.jpg");
 
-    const response = await fetch(`http://${ipNumber}:${portNumber}`, {
+    const response = await fetch(`https://${ipNumber}:${portNumber}`, {
       method: "POST",
       body: formData,
     });

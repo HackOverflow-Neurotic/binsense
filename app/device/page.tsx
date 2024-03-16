@@ -9,7 +9,7 @@ export default function Device(){
     useEffect(() => {
         const intervalId = setInterval(() => {
             async function fetchData(){
-                const response = await fetch(`http://${ipNumber}:${portNumber}/feed`, {
+                const response = await fetch(`https://${ipNumber}:${portNumber}/feed`, {
                     method: "GET",
                 });
                 const data = await response.json();
