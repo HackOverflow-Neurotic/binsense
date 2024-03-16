@@ -19,7 +19,7 @@ export const useIPStore = create<IPStore>((set) => {
       setPort: (value) => set((state) => ({ port: value })),
       role: '',
       setRole: (value) => set((state) => ({role: value})),
-      cameraOpen: false,
+      cameraOpen: true,
       setCameraOpen: () => set((state) => ({cameraOpen: !state.cameraOpen})),
     };
   });

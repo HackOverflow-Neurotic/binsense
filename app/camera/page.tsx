@@ -80,7 +80,7 @@ export default function Camera(){
   return (
     <>
       <div className="flex flex-col gap-5 justify-center items-center w-full ">
-        {cameraOpen && (
+        {/* {cameraOpen && (
           <div className="flex flex-col gap-5 justify-center items-center w-full">
             <Webcam
               audio={false}
@@ -89,13 +89,19 @@ export default function Camera(){
               videoConstraints={videoConstraints}
             />
           </div>
-        )}
+        )} */}
+        <Webcam
+              audio={false}
+              ref={webcamRef}
+              screenshotFormat="image/jpeg"
+              videoConstraints={videoConstraints}
+            />
         <div className="flex gap-5 justify-center items-center w-full">
           <Badge variant={"purple"}>{role.toUpperCase()}</Badge>
           <Badge variant={"pink"}>{`${ipNumber}:${portNumber}`}</Badge>
         </div>
 
-        <div className="flex gap-5 justify-center items-center w-full">
+        {/* <div className="flex gap-5 justify-center items-center w-full">
           {cameraOpen ? (
             <Button onClick={setCameraOpen} variant={"purple"}>
               Stop Camera
@@ -105,7 +111,7 @@ export default function Camera(){
               Start Camera
             </Button>
           )}
-        </div>
+        </div> */}
 
         {resArray.length > 0 && (
           <div className="flex flex-col gap-2 justify-center items-center w-full mt-5">
