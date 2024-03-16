@@ -38,7 +38,7 @@ export default function Home() {
     ) {
       try {
         toast.loading("Connecting...", { id: "connecting" });
-        const response = await fetch(`https://${ipNumber}:${portNumber}/ping`, {
+        const response = await fetch(`http://${ipNumber}:${portNumber}/ping`, {
           method: "GET",
         });
         if (response) {

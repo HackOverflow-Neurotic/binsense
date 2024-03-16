@@ -26,7 +26,7 @@ export default function Camera(){
     const formData = new FormData();
     formData.append("file", imageBlob, "image.jpg");
 
-    const response = await fetch(`https://${ipNumber}:${portNumber}`, {
+    const response = await fetch(`http://${ipNumber}:${portNumber}`, {
       method: "POST",
       body: formData,
     });
@@ -79,7 +79,7 @@ export default function Camera(){
 
   return (
     <>
-      <div className="flex flex-col gap-5 justify-center items-center w-full ">
+      <div className="flex md:flex-row flex-col gap-5 justify-center items-center w-full ">
         {/* {cameraOpen && (
           <div className="flex flex-col gap-5 justify-center items-center w-full">
             <Webcam
@@ -90,6 +90,7 @@ export default function Camera(){
             />
           </div>
         )} */}
+        <div className='flex flex-col gap-5'>
         <Webcam
               audio={false}
               ref={webcamRef}
@@ -99,6 +100,7 @@ export default function Camera(){
         <div className="flex gap-5 justify-center items-center w-full">
           <Badge variant={"purple"}>{role.toUpperCase()}</Badge>
           <Badge variant={"pink"}>{`${ipNumber}:${portNumber}`}</Badge>
+        </div>
         </div>
 
         {/* <div className="flex gap-5 justify-center items-center w-full">
@@ -114,12 +116,10 @@ export default function Camera(){
         </div> */}
 
         {resArray.length > 0 && (
-          <div className="flex flex-col gap-2 justify-center items-center w-full mt-5">
-          <div className=" text-6xl font-black bg-gradient-to-b from-purple-500 to-white text-transparent bg-clip-text">
-            Response
-          </div>
+          <div className="flex flex-col gap-2 justify-center items-center">
+      
           <div className="flex justify-center  ">
-            <div className="bg-opacity-20 backdrop-filter w-[32rem] flex mx-auto justify-center backdrop-blur-md bg-white rounded-lg border-1 border-white/50">
+            <div className="flex mx-auto justify-center /50">
               <div className="flex justify-center items-center h-[40vh] overflow-y-auto">
                 <div className="flex flex-col gap-5 md:max-w-min mx-5">
                   {/* <div className="w-full flex gap-5"></div> */}
